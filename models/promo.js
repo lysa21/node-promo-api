@@ -12,17 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     iteration: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    createdAt: {
-      field: "created_at",
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      field: "updated_at",
-      allowNull: false,
-      type: DataTypes.DATE
-    }
+    }}, {
+      timestamps: true,
+
   });
 
   promo.associate = (models) => {

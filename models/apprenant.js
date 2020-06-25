@@ -17,17 +17,10 @@ module.exports = (sequelize, DataTypes) => {
             field: "promo_id",
             allowNull: false,
             type: DataTypes.UUID
-        },
-        createdAt: {
-            field: "created_at",
-            allowNull: false,
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            field: "updated_at",
-            allowNull: false,
-            type: DataTypes.DATE
         }
+    },{
+        timestamps: true,
+
     });
 
    apprenant.associate = (models) => {

@@ -1,18 +1,36 @@
+
+
+'use strict'
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.sequelize.query(`
-            CREATE TABLE promos (
-                id UUID NOT NULL PRIMARY KEY, 
-                titre VARCHAR(30) NOT NULL,
-                iteration INTEGER NOT NULL,
-                created_at DATE NOT NULL,
-                updated_at DATE NOT NULL
-                );
-        `);
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.createTable('promos', {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+        allowNull: false
+      },
+      titre: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      iteration: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
+      }
+    })
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.sequelize.query(`
-        DROP TABLE promos;
-      `);
+  down: function (queryInterface) {
+    return queryInterface.dropTable('promos')
   }
-};
+}

@@ -37,7 +37,7 @@ module.exports = {
   },
   getAllPromo: async () => {
     return await Promo.findAll({
-      attributes: ["id", "titre", "iteration"],
+      attributes: ["id", "titre", "iteration", "createdAt"],
       order: [["createdAt", "ASC"]]
     });
   },

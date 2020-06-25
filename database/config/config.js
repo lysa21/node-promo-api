@@ -1,9 +1,9 @@
 module.exports = {
   development: {
-    dialect: "postgres",
-    username: "sandro",
-    password: "sandro",
-    database: "promoapi",
+    dialect: "mysql",
+    username: "root",
+    password: "root",
+    database: "test",
     host: "localhost"
   }
 };
