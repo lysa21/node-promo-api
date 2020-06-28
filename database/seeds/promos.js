@@ -1,11 +1,11 @@
-const Faker = require('../fakers')
 
-module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('promos', Faker('promos'), {})
-  },
-
-  down: function (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('promos', null, {})
-  }
-}
+module.exports = () => {
+    return [
+        {
+            id: '7baa2edf-a168-4375-97e8-f11382ada1e3',
+            titre: 'P2 - Montrouge',
+            iteration : 2
+          
+        }
+    ];
+};
